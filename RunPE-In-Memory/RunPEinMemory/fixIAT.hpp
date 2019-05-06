@@ -36,7 +36,7 @@ bool fixIAT(PVOID modulePtr)
 				DWORD addr = (DWORD)GetProcAddress(LoadLibraryA(lib_name), (char *)(orginThunk->u1.Ordinal & 0xFFFF));
 				PRINTF("        [V] API %x at %x\n", orginThunk->u1.Ordinal, addr);
 				fieldThunk->u1.Function = addr;
-				break;
+	
 			}
 			
 			if (fieldThunk->u1.Function == NULL) break;
