@@ -29,6 +29,16 @@ bool fixIAT(PVOID modulePtr)
 		{
 			IMAGE_THUNK_DATA32* fieldThunk = (IMAGE_THUNK_DATA32*)(DWORD(modulePtr) + offsetField + call_via);
 			IMAGE_THUNK_DATA32* orginThunk = (IMAGE_THUNK_DATA32*)(DWORD(modulePtr) + offsetThunk + thunk_addr);
+			PIMAGE_THUNK_DATA  import_Int = (PIMAGE_THUNK_DATA)(lib_desc->OriginalFirstThunk + DWORD(modulePtr));
+
+			if (import_Int->u1.Ordinal & 0x80000000) {
+				//Find Ordinal Id
+				DWORD addr = (DWORD)GetProcAddress(LoadLibraryA(lib_name), (char *)(orginThunk->u1.Ordinal & 0xFFFF));
+				PRINTF("        [V] API %x at %x\n", orginThunk->u1.Ordinal, addr);
+				fieldThunk->u1.Function = addr;
+				break;
+			}
+			
 			if (fieldThunk->u1.Function == NULL) break;
 
 			if (fieldThunk->u1.Function == orginThunk->u1.Function) {
