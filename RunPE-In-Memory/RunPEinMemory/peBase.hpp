@@ -47,7 +47,7 @@ IMAGE_DATA_DIRECTORY* getPeDir(PVOID pe_buffer, DWORD dir_id)
 
 	IMAGE_DATA_DIRECTORY* peDir = NULL;
 
-	IMAGE_NT_HEADERS32* nt_header = (IMAGE_NT_HEADERS32*)nt_headers;
+	IMAGE_NT_HEADERS* nt_header = (IMAGE_NT_HEADERS*)nt_headers;
 	peDir = &(nt_header->OptionalHeader.DataDirectory[dir_id]);
 
 	if (peDir->VirtualAddress == NULL) {

@@ -1,0 +1,8 @@
+﻿  RunPEinMemory.cpp
+c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\pebase.hpp(17): warning C4244: '引數': 將 'LONGLONG' 轉換為 'size_t'，由於類型不同，可能導致資料遺失
+c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\pebase.hpp(18): warning C4244: '引數': 將 'LONGLONG' 轉換為 'size_t'，由於類型不同，可能導致資料遺失
+c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): error C3861: 'PRINTF': 找不到識別項
+c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'DWORD *'
+c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(47): warning C4244: '=': 將 'ULONGLONG' 轉換為 'DWORD'，由於類型不同，可能導致資料遺失
+c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
+c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(27): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
