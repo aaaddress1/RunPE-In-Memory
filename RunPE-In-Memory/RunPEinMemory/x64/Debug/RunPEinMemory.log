@@ -1,37 +1,20 @@
-﻿  RunPEinMemory.cpp
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'ULONGLONG'
-  c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%llx'
-  c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%Ix'
-  c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%I64x'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 2 的類型為 'size_t'
-  c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%zx'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(51): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 2 的類型為 'size_t'
-  c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(51): note: 請考慮在格式字串中使用 '%zx'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(22): warning C4311: '<function-style-cast>': 指標值由 'PVOID' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(22): warning C4302: '<function-style-cast>': 從 'PVOID' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(22): warning C4312: '類型轉換': 將 'unsigned long' 轉換為較大的 'IMAGE_BASE_RELOCATION *'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(29): warning C4311: '<function-style-cast>': 指標值由 'IMAGE_BASE_RELOCATION *' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(29): warning C4302: '<function-style-cast>': 從 'IMAGE_BASE_RELOCATION *' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(45): warning C4311: '<function-style-cast>': 指標值由 'PVOID' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(45): warning C4302: '<function-style-cast>': 從 'PVOID' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(45): warning C4312: '類型轉換': 將 'unsigned long' 轉換為較大的 'DWORD *'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'DWORD *'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'DWORD *' 的引數 1 衝突
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(47): warning C4244: '=': 將 'ULONGLONG' 轉換為 'DWORD'，由於類型不同，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(48): warning C4311: '<function-style-cast>': 指標值由 'BASE_RELOCATION_ENTRY *' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(48): warning C4302: '<function-style-cast>': 從 'BASE_RELOCATION_ENTRY *' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'LPVOID' 的引數 1 衝突
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(27): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(27): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'LPVOID' 的引數 1 衝突
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(42): warning C4311: '類型轉換': 指標值由 'BYTE *' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(42): warning C4302: '類型轉換': 從 'BYTE *' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(59): warning C4311: '類型轉換': 指標值由 'BYTE *' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(59): warning C4302: '類型轉換': 從 'BYTE *' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(59): warning C4311: '類型轉換': 指標值由 'LPVOID' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(59): warning C4302: '類型轉換': 從 'LPVOID' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(61): warning C4311: '類型轉換': 指標值由 'BYTE *' 指派至 'DWORD' 時會遭截斷
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(61): warning C4302: '類型轉換': 從 'BYTE *' 轉換為 'DWORD'，是由較大的類型轉換為較小的類型，可能導致資料遺失
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(63): warning C4312: '類型轉換': 將 'DWORD' 轉換為較大的 'void (__cdecl *)(void)'
-c:\users\exploit\desktop\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(64): warning C4715: 'peLoader': 不是所有控制路徑都傳回值
-  RunPEinMemory.vcxproj -> C:\Users\exploit\Desktop\RunPE-In-Memory-master\RunPE-In-Memory\x64\Debug\RunPEinMemory.exe
+﻿  stdafx.cpp
+  RunPEinMemory.cpp
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'ULONGLONG'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%llx'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%Ix'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%I64x'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 2 的類型為 'size_t'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%zx'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(51): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 2 的類型為 'size_t'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(51): note: 請考慮在格式字串中使用 '%zx'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(41): warning C4477: 'printf' : 格式字串 '%lx' 需要 'unsigned long' 類型的引數，但 variadic 引數 1 的類型為 'size_t'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(41): note: 請考慮在格式字串中使用 '%zx'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'size_t *'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'size_t *' 的引數 1 衝突
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'LPVOID' 的引數 1 衝突
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(27): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(27): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'LPVOID' 的引數 1 衝突
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(64): warning C4715: 'peLoader': 不是所有控制路徑都傳回值
+  RunPEinMemory.vcxproj -> C:\Users\exploit\Desktop\AptMinikatz\[4] Shellcode Devloping & Packer\RunPE-In-Memory-master\RunPE-In-Memory\x64\Debug\RunPEinMemory.exe

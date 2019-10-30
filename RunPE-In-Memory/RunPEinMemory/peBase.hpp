@@ -38,7 +38,7 @@ BYTE* getNtHdrs(BYTE *pe_buffer)
 	return (BYTE*)inh;
 }
 
-IMAGE_DATA_DIRECTORY* getPeDir(PVOID pe_buffer, DWORD dir_id)
+IMAGE_DATA_DIRECTORY* getPeDir(PVOID pe_buffer, size_t dir_id)
 {
 	if (dir_id >= IMAGE_NUMBEROF_DIRECTORY_ENTRIES) return NULL;
 

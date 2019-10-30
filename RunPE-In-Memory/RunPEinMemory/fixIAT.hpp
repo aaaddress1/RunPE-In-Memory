@@ -6,11 +6,11 @@ bool fixIAT(PVOID modulePtr)
 	IMAGE_DATA_DIRECTORY *importsDir = getPeDir(modulePtr, IMAGE_DIRECTORY_ENTRY_IMPORT);
 	if (importsDir == NULL) return false;
 
-	DWORD maxSize = importsDir->Size;
-	DWORD impAddr = importsDir->VirtualAddress;
+	size_t maxSize = importsDir->Size;
+	size_t impAddr = importsDir->VirtualAddress;
 
 	IMAGE_IMPORT_DESCRIPTOR* lib_desc = NULL;
-	DWORD parsedSize = 0;
+	size_t parsedSize = 0;
 
 	for (; parsedSize < maxSize; parsedSize += sizeof(IMAGE_IMPORT_DESCRIPTOR)) {
 		lib_desc = (IMAGE_IMPORT_DESCRIPTOR*)(impAddr + parsedSize + (ULONG_PTR)modulePtr);
@@ -19,12 +19,12 @@ bool fixIAT(PVOID modulePtr)
 		LPSTR lib_name = (LPSTR)((ULONGLONG)modulePtr + lib_desc->Name);
 		printf("    [+] Import DLL: %s\n", lib_name);
 
-		DWORD call_via = lib_desc->FirstThunk;
-		DWORD thunk_addr = lib_desc->OriginalFirstThunk;
+		size_t call_via = lib_desc->FirstThunk;
+		size_t thunk_addr = lib_desc->OriginalFirstThunk;
 		if (thunk_addr == NULL) thunk_addr = lib_desc->FirstThunk;
 
-		DWORD offsetField = 0;
-		DWORD offsetThunk = 0;
+		size_t offsetField = 0;
+		size_t offsetThunk = 0;
 		while (true)
 		{
 			IMAGE_THUNK_DATA* fieldThunk = (IMAGE_THUNK_DATA*)(size_t(modulePtr) + offsetField + call_via);

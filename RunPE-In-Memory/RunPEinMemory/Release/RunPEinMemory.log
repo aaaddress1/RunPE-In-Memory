@@ -1,0 +1,16 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141_xp\Toolset.targets(39,5): warning MSB8051: 已取代以 Windows XP 為目標的支援，且該支援不會存在於 Visual Studio 的未來版本中。如需詳細資訊，請參閱 https://go.microsoft.com/fwlink/?linkid=2023588。
+cl : 命令列 warning D9025: 覆寫 '/sdl'，以 '/GS-'
+  stdafx.cpp
+cl : 命令列 warning D9025: 覆寫 '/sdl'，以 '/GS-'
+  RunPEinMemory.cpp
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\pebase.hpp(17): warning C4244: '引數': 將 'LONGLONG' 轉換為 'size_t'，由於類型不同，可能導致資料遺失
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\pebase.hpp(18): warning C4244: '引數': 將 'LONGLONG' 轉換為 'size_t'，由於類型不同，可能導致資料遺失
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'size_t *'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(47): warning C4244: '=': 將 'ULONGLONG' 轉換為 'size_t'，由於類型不同，可能導致資料遺失
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(30): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
+  正在產生程式碼
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(67): warning C4715: 'peLoader': 不是所有控制路徑都傳回值
+  All 11 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成程式碼產生
+  RunPEinMemory.vcxproj -> C:\Users\exploit\Desktop\AptMinikatz\[4] Shellcode Devloping & Packer\RunPE-In-Memory-master\RunPE-In-Memory\Release\RunPEinMemory.exe

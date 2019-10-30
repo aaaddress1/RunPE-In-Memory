@@ -13,24 +13,24 @@ bool applyReloc(ULONGLONG newBase, ULONGLONG oldBase, PVOID modulePtr, SIZE_T mo
 	if (relocDir == NULL) /* Cannot relocate - application have no relocation table */
 		return false;
 
-	DWORD maxSize = relocDir->Size;
-	DWORD relocAddr = relocDir->VirtualAddress;
+	size_t maxSize = relocDir->Size;
+	size_t relocAddr = relocDir->VirtualAddress;
 	IMAGE_BASE_RELOCATION* reloc = NULL;
 
-	DWORD parsedSize = 0;
+	size_t parsedSize = 0;
 	for (; parsedSize < maxSize; parsedSize += reloc->SizeOfBlock) {
-		reloc = (IMAGE_BASE_RELOCATION*)(relocAddr + parsedSize + DWORD(modulePtr));
+		reloc = (IMAGE_BASE_RELOCATION*)(relocAddr + parsedSize + size_t(modulePtr));
 		if (reloc->VirtualAddress == NULL || reloc->SizeOfBlock == 0)
 			break;
 
-		DWORD entriesNum = (reloc->SizeOfBlock - sizeof(IMAGE_BASE_RELOCATION)) / sizeof(BASE_RELOCATION_ENTRY);
-		DWORD page = reloc->VirtualAddress;
+		size_t entriesNum = (reloc->SizeOfBlock - sizeof(IMAGE_BASE_RELOCATION)) / sizeof(BASE_RELOCATION_ENTRY);
+		size_t page = reloc->VirtualAddress;
 
-		BASE_RELOCATION_ENTRY* entry = (BASE_RELOCATION_ENTRY*)(DWORD(reloc) + sizeof(IMAGE_BASE_RELOCATION));
-		for (DWORD i = 0; i < entriesNum; i++) {
-			DWORD offset = entry->Offset;
-			DWORD type = entry->Type;
-			DWORD reloc_field = page + offset;
+		BASE_RELOCATION_ENTRY* entry = (BASE_RELOCATION_ENTRY*)(size_t(reloc) + sizeof(IMAGE_BASE_RELOCATION));
+		for (size_t i = 0; i < entriesNum; i++) {
+			size_t offset = entry->Offset;
+			size_t type = entry->Type;
+			size_t reloc_field = page + offset;
 			if (entry == NULL || type == 0)
 				break;
 			if (type != RELOC_32BIT_FIELD) {
@@ -42,10 +42,10 @@ bool applyReloc(ULONGLONG newBase, ULONGLONG oldBase, PVOID modulePtr, SIZE_T mo
 				return false;
 			}
 
-			DWORD* relocateAddr = (DWORD*)(DWORD(modulePtr) + reloc_field);
+			size_t* relocateAddr = (size_t*)(size_t(modulePtr) + reloc_field);
 			printf("    [V] Apply Reloc Field at %x\n", relocateAddr);
 			(*relocateAddr) = ((*relocateAddr) - oldBase + newBase);
-			entry = (BASE_RELOCATION_ENTRY*)(DWORD(entry) + sizeof(BASE_RELOCATION_ENTRY));
+			entry = (BASE_RELOCATION_ENTRY*)(size_t(entry) + sizeof(BASE_RELOCATION_ENTRY));
 		}
 	}
 	return (parsedSize != 0);

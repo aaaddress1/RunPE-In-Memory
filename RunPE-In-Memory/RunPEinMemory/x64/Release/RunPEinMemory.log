@@ -1,0 +1,23 @@
+﻿  stdafx.cpp
+  RunPEinMemory.cpp
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'ULONGLONG'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%llx'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%Ix'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%I64x'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 2 的類型為 'size_t'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(37): note: 請考慮在格式字串中使用 '%zx'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(51): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 2 的類型為 'size_t'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixiat.hpp(51): note: 請考慮在格式字串中使用 '%zx'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(41): warning C4477: 'printf' : 格式字串 '%lx' 需要 'unsigned long' 類型的引數，但 variadic 引數 1 的類型為 'size_t'
+  c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(41): note: 請考慮在格式字串中使用 '%zx'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'size_t *'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\fixreloc.hpp(46): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'size_t *' 的引數 1 衝突
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(22): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'LPVOID' 的引數 1 衝突
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(30): warning C4477: 'printf' : 格式字串 '%x' 需要 'unsigned int' 類型的引數，但 variadic 引數 1 的類型為 'LPVOID'
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(30): warning C4313: 'printf': 格式字串中的 '%x' 與類型 'LPVOID' 的引數 1 衝突
+  正在產生程式碼
+c:\users\exploit\desktop\aptminikatz\[4] shellcode devloping & packer\runpe-in-memory-master\runpe-in-memory\runpeinmemory\runpeinmemory.cpp(67): warning C4715: 'peLoader': 不是所有控制路徑都傳回值
+  All 11 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成程式碼產生
+  RunPEinMemory.vcxproj -> C:\Users\exploit\Desktop\AptMinikatz\[4] Shellcode Devloping & Packer\RunPE-In-Memory-master\RunPE-In-Memory\x64\Release\RunPEinMemory.exe
