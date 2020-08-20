@@ -1,5 +1,5 @@
 # RunPE-In-Memory
-Run 32bit/64bit copy of Exe File in memory, like what Software Packer Do.
+Run 32bit/64bit copy of Exe File in memory like an Application Loader.
 
 ![](demo.png)
 
