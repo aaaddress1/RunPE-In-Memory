@@ -1,4 +1,46 @@
+#include <string>
 #include <windows.h>
+using namespace std;
+char* sz_masqCmd_Ansi = NULL, *sz_masqCmd_ArgvAnsi[100] = {  };
+wchar_t* sz_masqCmd_Widh = NULL, *sz_masqCmd_ArgvWidh[100] = { };
+int int_masqCmd_Argc = 0;
+LPWSTR hookGetCommandLineW() { return sz_masqCmd_Widh; }
+LPSTR hookGetCommandLineA() { return sz_masqCmd_Ansi;  }
+int __wgetmainargs(int* _Argc, wchar_t*** _Argv, wchar_t*** _Env, int _useless_, void* _useless) {
+	*_Argc = int_masqCmd_Argc;
+	*_Argv = (wchar_t **)sz_masqCmd_ArgvWidh;
+	return 0;
+}
+int __getmainargs(int* _Argc, char*** _Argv, char*** _Env, int _useless_, void* _useless) {
+	*_Argc = int_masqCmd_Argc;
+	*_Argv = (char **)sz_masqCmd_ArgvAnsi;
+	return 0;
+}
+
+void masqueradeCmdline(const wchar_t* cmdline) {
+	if (!cmdline) return;
+	auto sz_wcmdline = wstring(cmdline);
+
+	// 
+	sz_masqCmd_Widh = new wchar_t[sz_wcmdline.size() + 1];
+	lstrcpyW(sz_masqCmd_Widh, sz_wcmdline.c_str());
+
+	//
+	auto k = string(sz_wcmdline.begin(), sz_wcmdline.end());
+	sz_masqCmd_Ansi = new char[k.size() + 1];
+	lstrcpyA(sz_masqCmd_Ansi, k.c_str());
+
+	wchar_t** szArglist = CommandLineToArgvW(cmdline, &int_masqCmd_Argc);
+	for (size_t i = 0; i < int_masqCmd_Argc; i++) {
+		sz_masqCmd_ArgvWidh[i] = new wchar_t[lstrlenW(szArglist[i]) + 1];
+		lstrcpyW(sz_masqCmd_ArgvWidh[i], szArglist[i]);
+
+		auto b = string(wstring(sz_masqCmd_ArgvWidh[i]).begin(), wstring(sz_masqCmd_ArgvWidh[i]).end());
+		sz_masqCmd_ArgvAnsi[i] = new char[b.size() + 1];
+		lstrcpyA(sz_masqCmd_ArgvAnsi[i], b.c_str());
+	}
+}
+
 
 bool fixIAT(PVOID modulePtr)
 {
@@ -49,7 +91,22 @@ bool fixIAT(PVOID modulePtr)
 				LPSTR func_name = (LPSTR)by_name->Name;
 				size_t addr = (size_t)GetProcAddress(LoadLibraryA(lib_name), func_name);
 				printf("        [V] API %s at %x\n", func_name, addr);
-				fieldThunk->u1.Function = addr;
+				if (strcmpi(func_name, "GetCommandLineA") == 0)
+					fieldThunk->u1.Function = (size_t)hookGetCommandLineA;
+				else if (strcmpi(func_name, "GetCommandLineW") == 0)
+					fieldThunk->u1.Function = (size_t)hookGetCommandLineW;
+				else if (strcmpi(func_name, "__wgetmainargs") == 0) {
+	
+					fieldThunk->u1.Function = (size_t)__wgetmainargs;
+				}
+				else if (strcmpi(func_name, "__getmainargs") == 0) {
+					fieldThunk->u1.Function = (size_t)__getmainargs;
+		
+				}
+					
+				else
+					fieldThunk->u1.Function = addr;
+
 			}
 			offsetField += sizeof(IMAGE_THUNK_DATA);
 			offsetThunk += sizeof(IMAGE_THUNK_DATA);
