@@ -69,7 +69,7 @@ bool peLoader(const char *exePath, const wchar_t* cmdline)
 	masqueradeCmdline(cmdline);
 	((void(*)())retAddr)();
 }
-#include <string>
+
 int main(int argc, char **argv)
 {
 	if (argc != 2)
