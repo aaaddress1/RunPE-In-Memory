@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include <Windows.h>
 #include "peBase.hpp"
 #include "fixIAT.hpp"
@@ -56,6 +56,10 @@ bool peLoader(const char *exePath, const wchar_t* cmdline)
 			SectionHeaderArr[i].SizeOfRawData
 		);
 	}
+
+	// for demo usage: 
+	// masqueradeCmdline(L"C:\\Windows\\RunPE_In_Memory.exe Demo by aaaddress1");
+	masqueradeCmdline(cmdline);
 	fixIAT(pImageBase);
 
 	if (pImageBase != preferAddr) 
@@ -64,9 +68,6 @@ bool peLoader(const char *exePath, const wchar_t* cmdline)
 	size_t retAddr = (size_t)(pImageBase)+ntHeader->OptionalHeader.AddressOfEntryPoint;
 	printf("Run Exe Module: %s\n", exePath);
 
-	// for demo usage: 
-	// masqueradeCmdline(L"C:\\Windows\\RunPE_In_Memory.exe Demo by aaaddress1");
-	masqueradeCmdline(cmdline);
 	((void(*)())retAddr)();
 }
 
