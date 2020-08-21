@@ -1,11 +1,14 @@
 #include <string>
 #include <windows.h>
 using namespace std;
+
+bool hijackCmdline = false;
 char* sz_masqCmd_Ansi = NULL, *sz_masqCmd_ArgvAnsi[100] = {  };
 wchar_t* sz_masqCmd_Widh = NULL, *sz_masqCmd_ArgvWidh[100] = { };
 int int_masqCmd_Argc = 0;
 LPWSTR hookGetCommandLineW() { return sz_masqCmd_Widh; }
 LPSTR hookGetCommandLineA() { return sz_masqCmd_Ansi;  }
+
 int __wgetmainargs(int* _Argc, wchar_t*** _Argv, wchar_t*** _Env, int _useless_, void* _useless) {
 	*_Argc = int_masqCmd_Argc;
 	*_Argv = (wchar_t **)sz_masqCmd_ArgvWidh;
@@ -39,6 +42,8 @@ void masqueradeCmdline(const wchar_t* cmdline) {
 		sz_masqCmd_ArgvAnsi[i] = new char[b.size() + 1];
 		lstrcpyA(sz_masqCmd_ArgvAnsi[i], b.c_str());
 	}
+
+	hijackCmdline = true;
 }
 
 
@@ -91,19 +96,15 @@ bool fixIAT(PVOID modulePtr)
 				LPSTR func_name = (LPSTR)by_name->Name;
 				size_t addr = (size_t)GetProcAddress(LoadLibraryA(lib_name), func_name);
 				printf("        [V] API %s at %x\n", func_name, addr);
-				if (strcmpi(func_name, "GetCommandLineA") == 0)
+
+				if (hijackCmdline && strcmpi(func_name, "GetCommandLineA") == 0)
 					fieldThunk->u1.Function = (size_t)hookGetCommandLineA;
-				else if (strcmpi(func_name, "GetCommandLineW") == 0)
+				else if (hijackCmdline && strcmpi(func_name, "GetCommandLineW") == 0)
 					fieldThunk->u1.Function = (size_t)hookGetCommandLineW;
-				else if (strcmpi(func_name, "__wgetmainargs") == 0) {
-	
+				else if (hijackCmdline && strcmpi(func_name, "__wgetmainargs") == 0)
 					fieldThunk->u1.Function = (size_t)__wgetmainargs;
-				}
-				else if (strcmpi(func_name, "__getmainargs") == 0) {
+				else if (hijackCmdline && strcmpi(func_name, "__getmainargs") == 0)
 					fieldThunk->u1.Function = (size_t)__getmainargs;
-		
-				}
-					
 				else
 					fieldThunk->u1.Function = addr;
 
